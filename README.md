@@ -2,7 +2,7 @@
 
 Mission-critical style incident pipeline: ingest high-volume **signals**, debounce by component, store raw audit in **MongoDB**, transactional **work items** and **RCA** in **PostgreSQL**, hot-path **Redis** cache, and a **React** dashboard for lifecycle + RCA.
 
-**Repository (submit this URL in your PDF):** `https://github.com/<your-org>/<your-repo>`
+**Repository (submit this URL in your PDF):** `https://github.com/dhanshree11553/ims`
 
 ## Architecture
 
@@ -45,7 +45,7 @@ Requires Docker Desktop (or compatible engine) running.
 docker compose up --build
 ```
 
-- **API:** http://localhost:8000 — OpenAPI: http://localhost:8000/docs  
+- **API:** http://localhost:8000 — OpenAPI: http://localhost:8000/docs
 - **UI:** http://localhost:5173 (nginx serves the built SPA; API is proxied under `/api/`)
 
 Health: `GET http://localhost:8000/health` (Postgres, Mongo, Redis).
@@ -104,15 +104,15 @@ Includes unit tests for **RCA completeness** and **CLOSED** transition rules.
 
 ## API highlights
 
-| Method | Path | Purpose |
-|--------|------|---------|
-| POST | `/ingest/signals` | Accept signal (rate-limited; may 503 if queue full) |
-| GET | `/incidents/sorted` | Active incidents sorted by severity |
-| GET | `/incidents/{id}` | Detail + raw signals from Mongo |
-| PUT | `/incidents/{id}/rca` | Create/update RCA (validates fields, sets MTTR) |
-| PATCH | `/incidents/{id}/status` | State transition (CLOSED blocked without RCA) |
-| GET | `/health` | Liveness + dependency checks |
-| GET | `/metrics/aggregates` | Time buckets |
+| Method | Path                     | Purpose                                             |
+| ------ | ------------------------ | --------------------------------------------------- |
+| POST   | `/ingest/signals`        | Accept signal (rate-limited; may 503 if queue full) |
+| GET    | `/incidents/sorted`      | Active incidents sorted by severity                 |
+| GET    | `/incidents/{id}`        | Detail + raw signals from Mongo                     |
+| PUT    | `/incidents/{id}/rca`    | Create/update RCA (validates fields, sets MTTR)     |
+| PATCH  | `/incidents/{id}/status` | State transition (CLOSED blocked without RCA)       |
+| GET    | `/health`                | Liveness + dependency checks                        |
+| GET    | `/metrics/aggregates`    | Time buckets                                        |
 
 ## Observability
 
@@ -132,7 +132,7 @@ Includes unit tests for **RCA completeness** and **CLOSED** transition rules.
 - [ ] Push this repo to **GitHub** (`/backend`, `/frontend`, compose, scripts, `prompts/`).
 - [ ] Replace the GitHub URL at the top of this README and in your PDF.
 - [ ] Run `docker compose up --build` and smoke-test UI + `/health`.
-- [ ] Export **one PDF** named: `Full Name - Infrastructure / SRE Intern Assignment` (include GitHub link).
+- [ ] Export **one PDF** named: `Dhanashree Sayanekar - Infrastructure / SRE Intern Assignment` (include GitHub link).
 
 ## Prompts / spec
 
