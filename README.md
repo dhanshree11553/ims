@@ -132,7 +132,7 @@ Includes unit tests for **RCA completeness** and **CLOSED** transition rules.
 - [ ] Push this repo to **GitHub** (`/backend`, `/frontend`, compose, scripts, `prompts/`).
 - [ ] Replace the GitHub URL at the top of this README and in your PDF.
 - [ ] Run `docker compose up --build` and smoke-test UI + `/health`.
-- [ ] Export **one PDF** named: `Dhanashree Sayanekar - Infrastructure / SRE Intern Assignment` (include GitHub link).
+- [ ] Export **one PDF** named: `Dhanashree Sayanekar - Infrastructure / SRE Intern Assignment` (https://github.com/dhanshree11553/ims).
 
 ## Prompts / spec
 
