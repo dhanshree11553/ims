@@ -1,0 +1,37 @@
+{
+  "description": "Simulated RDBMS outage followed by MCP host degradation (ingest each object as POST /ingest/signals body)",
+  "signals": [
+    {
+      "component_id": "PG_PRIMARY_01",
+      "component_type": "RDBMS",
+      "severity": "critical",
+      "message": "Connection pool exhausted; primary rejecting new connections",
+      "payload": {
+        "error_code": "53300",
+        "active_connections": 500,
+        "max_connections": 500
+      }
+    },
+    {
+      "component_id": "PG_PRIMARY_01",
+      "component_type": "RDBMS",
+      "severity": "critical",
+      "message": "Replication lag exceeded 30s on standby",
+      "payload": { "lag_seconds": 42 }
+    },
+    {
+      "component_id": "MCP_HOST_EU_1",
+      "component_type": "MCP_HOST",
+      "severity": "high",
+      "message": "Tool invocation timeouts after DB slowdown",
+      "payload": { "p99_latency_ms": 8500, "upstream": "PG_PRIMARY_01" }
+    },
+    {
+      "component_id": "CACHE_CLUSTER_01",
+      "component_type": "CACHE",
+      "severity": "medium",
+      "message": "Elevated miss rate during DB incident",
+      "payload": { "miss_rate": 0.34 }
+    }
+  ]
+}
